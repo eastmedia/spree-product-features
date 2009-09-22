@@ -1,0 +1,25 @@
+<% if @features.blank? %>
+  <p>
+    You have not added any features to this product yet.
+  </p>
+
+<% else %>
+  <table id="features">
+    <tr>
+      <th>Name</th>
+      <th>Image</th>
+    </tr>
+    <%= render :partial => 'feature', :collection => @features %>
+  </table>
+<% end %>
+
+<p>
+  Select features from the list below:
+</p>
+
+<% form_for :product, :url => add_admin_product_features_url(:product_id => @product.id), :method => :post do |f| %>
+  <%= f.collection_select(:feature_ids, Product.all.sort_by(&:name), :id, :name, {}, :multiple => true, :size => 5) %>
+  <%= f.submit 'Add' %>
+<% end %>
+
+<%= link_to 'new feature', new_admin_feature_url %>

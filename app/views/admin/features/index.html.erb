@@ -1,0 +1,16 @@
+<% if @features.blank? %>
+  <p>
+    You have not added any features yet.
+  </p>
+
+<% else %>
+  <table id="features">
+    <tr>
+      <th>Name</th>
+      <th>Image</th>
+    </tr>
+    <%= render :partial => 'feature', :collection => @features %>
+  </table>
+<% end %>
+
+<%= link_to 'new feature', new_admin_feature_url %>

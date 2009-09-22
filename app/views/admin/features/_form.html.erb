@@ -1,0 +1,10 @@
+  <dt><label for='feature[name]'>Name</label></dt>
+  <dd><%= f.text_field :name %></dd>
+  <dt><label for='feature[image]'>Image</label></dt>
+  <dd><%= f.file_field :image %></dd>
+
+  <% if @feature.image.exists? %>
+    <dt><label>Current Image</label></dt>
+    <dd><%= image_tag @feature.image.url %></dd>
+  <% end %>
+

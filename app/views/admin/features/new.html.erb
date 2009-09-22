@@ -1,0 +1,10 @@
+<%= error_messages_for :feature, :header => false %>
+
+<% form_for :feature, @feature, :url => admin_features_url, :html => {:multipart => true, :method => :post} do |f| -%>
+  <dl>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <dt></dt>
+    <dd><%= f.submit 'Create' %></dd>
+  </dl>
+<% end -%>
+

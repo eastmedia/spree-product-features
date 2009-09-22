@@ -1,0 +1,12 @@
+<tr>
+  <td>
+    <%= feature.name %>
+  </td>
+  <td>
+    <%= image_tag feature.image.url %>
+  </td>
+  <td>
+    <%= link_to t('edit'), edit_admin_feature_url(feature), :class => 'iconlink' %>
+    <%= link_to t('remove'), admin_feature_url(feature), :method => :delete, :class => 'iconlink' %>
+  </td>
+</tr>
