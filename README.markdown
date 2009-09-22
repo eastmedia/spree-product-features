@@ -6,8 +6,8 @@ Spree Product Features is an extension for the Spree E-Commerce Platform (http:/
 Usage
 =====
 
->> @feature = Feature.create(:name => '10 year warranty', :image => File.open('images/10_year_warranty.png', 'rb'))
+  >> @feature = Feature.create(:name => '10 year warranty', :image => File.open('images/10_year_warranty.png', 'rb'))
 
->> @product.features << @feature
->> @product.features.delete(@feature)
+  >> @product.features << @feature
+  >> @product.features.delete(@feature)
 
